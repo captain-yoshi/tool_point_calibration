@@ -3,11 +3,12 @@
 
 #include <vector>
 #include <Eigen/Dense>
+#include <tf_conversions/tf_eigen.h>
 
 namespace tool_point_calibration
 {
 
-typedef std::vector<Eigen::Affine3d, Eigen::aligned_allocator<Eigen::Affine3d>> Affine3dVector;
+typedef std::vector<Eigen::Isometry3d, Eigen::aligned_allocator<Eigen::Isometry3d>> Isometry3dVector;
 
 struct TcpCalibrationResult
 {
@@ -41,7 +42,7 @@ struct TcpCalibrationResult
  * @param touch_pt_guess
  * @return
  */
-TcpCalibrationResult calibrateTcp(const Affine3dVector& tool_poses,
+TcpCalibrationResult calibrateTcp(const Isometry3dVector& tool_poses,
                                   const Eigen::Vector3d& tcp_guess = Eigen::Vector3d::Zero(),
                                   const Eigen::Vector3d& touch_pt_guess = Eigen::Vector3d::Zero());
 
