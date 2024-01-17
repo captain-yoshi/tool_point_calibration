@@ -1,6 +1,7 @@
 #ifndef TOOL_POINT_CALIBRATION_H
 #define TOOL_POINT_CALIBRATION_H
 
+#include <vector>
 #include <Eigen/Dense>
 
 namespace tool_point_calibration
